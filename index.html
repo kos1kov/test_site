@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Кальянная</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(background.jpg);
+            background-size: cover;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        main {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+        }
+
+        .tobacco-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tobacco-card img {
+            width: 200px;
+            margin-right: 20px;
+        }
+
+        .tobacco-card h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .tobacco-card p {
+            margin: 10px 0;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .rating span {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            cursor: pointer;
+            color: #ccc;
+            font-size: 20px;
+        }
+
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+            color: #f90;
+        }
+
+        .age-confirmation {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .age-confirmation label {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .age-confirmation input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .age-confirmation p {
+            color: #fff;
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в нашу кальянную!</h1>
+    </header>
+    <main>
+        <div class="tobacco-card">
+            <img src="tobacco-a.jpg" alt="Табак A">
+            <div>
+                <h2>Табак A</h2>
+                <p>Описание табака A.</p>
+                <p>Цена: $10</p>
+                <div class="rating">
+                    <input type="radio" name="rating-a" id="rating-a-5" value="5">
+                    <label for="rating-a-5">&#9733;</label>
+                    <input type="radio" name="rating-a" id="rating-a-4" value="4">
+                    <label for="rating-a-4">&#9733;</label>
+                    <input type="radio" name="rating-a" id="rating-a-3" value="3">
+                    <label for="rating-a-3">&#9733;</label>
+                    <input type="radio" name="rating-a" id="rating-a-2" value="2">
+                    <label for="rating-a-2">&#9733;</label>
+                    <input type="radio" name="rating-a" id="rating-a-1" value="1">
+                    <label for="rating-a-1">&#9733;</label>
+                </div>
+            </div>
+        </div>
+        <div class="tobacco-card">
+            <img src="tobacco-b.jpg" alt="Табак B">
+            <div>
+                <h2>Табак B</h2>
+                <p>Описание табака B.</p>
+                <p>Цена: $12</p>
+                <div class="rating">
+                    <input type="radio" name="rating-b" id="rating-b-5" value="5">
+                    <label for="rating-b-5">&#9733;</label>
+                    <input type="radio" name="rating-b" id="rating-b-4" value="4">
+                    <label for="rating-b-4">&#9733;</label>
+                    <input type="radio" name="rating-b" id="rating-b-3" value="3">
+                    <label for="rating-b-3">&#9733;</label>
+                    <input type="radio" name="rating-b" id="rating-b-2" value="2">
+                    <label for="rating-b-2">&#9733;</label>
+                    <input type="radio" name="rating-b" id="rating-b-1" value="1">
+                    <label for="rating-b-1">&#9733;</label>
+                </div>
+            </div>
+        </div>
+        <div class="tobacco-card">
+            <img src="tobacco-c.jpg" alt="Табак C">
+            <div>
+                <h2>Табак C</h2>
+                <p>Описание табака C.</p>
+                <p>Цена: $15</p>
+                <div class="rating">
+                    <input type="radio" name="rating-c" id="rating-c-5" value="5">
+                    <label for="rating-c-5">&#9733;</label>
+                    <input type="radio" name="rating-c" id="rating-c-4" value="4">
+                    <label for="rating-c-4">&#9733;</label>
+                    <input type="radio" name="rating-c" id="rating-c-3" value="3">
+                    <label for="rating-c-3">&#9733;</label>
+                    <input type="radio" name="rating-c" id="rating-c-2" value="2">
+                    <label for="rating-c-2">&#9733;</label>
+                    <input type="radio" name="rating-c" id="rating-c-1" value="1">
+                    <label for="rating-c-1">&#9733;</label>
+                </div>
+            </div>
+        </div>
+        <!-- Добавьте другие виды табака с фотографиями, оценками и дополнительной информацией по аналогии -->
+
+        <div class="age-confirmation">
+            <input type="checkbox" id="confirm-age">
+            <label for="confirm-age">Я подтверждаю, что мне исполнилось 21 год</label>
+        </div>
+    </main>
+
+    <script>
+        var confirmAgeCheckbox = document.getElementById('confirm-age');
+        confirmAgeCheckbox.addEventListener('change', function () {
+            var mainElement = document.querySelector('main');
+            if (confirmAgeCheckbox.checked) {
+                mainElement.classList.remove('age-restricted');
+            } else {
+                mainElement.classList.add('age-restricted');
+            }
+        });
+    </script>
+</body>
+</html>
